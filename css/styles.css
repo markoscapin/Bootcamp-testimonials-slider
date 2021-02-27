@@ -1,0 +1,92 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+
+.testimonial-container {
+    position: relative;
+    left: 50px;
+    width: 70%;
+    
+}
+
+.citation {
+    font-weight: 300;
+    font-size: 1.7rem;
+    color: hsl(240, 38%, 20%);
+    
+    
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: baseline;
+    padding-top: 2.5rem;
+}
+
+.profession {
+    color: hsl(240, 18%, 77%);
+    padding-left: 0.4rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1.2px;
+}
+
+.name {
+    color: hsl(240, 38%, 20%);
+    font-size: 1.2rem;
+}
+
+.testimonial-img {
+    box-shadow: 2px 6px 30px 1px hsla(240, 38%, 20%, 0.2);
+    width: 100%;
+    
+}
+
+.buttons {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 10vw;
+    transform: translate(50%, -50%);
+    box-shadow: 0px 3px 15px 1px hsla(240, 38%, 20%, 0.2);
+    padding: 15px 20px;
+}
+
+button {
+    outline: none;
+    background-color: transparent;
+    border: 0px;
+}
+
+
+
