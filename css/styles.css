@@ -9,7 +9,6 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    height: 100vh;
 }
 
 .attribution {
@@ -19,110 +18,73 @@ body {
     width: 100%;
     padding-bottom: 1rem;
 }
-/* This is the background of the wave  */
-.testimonial-wrapper::before {
-    content: "";
-    background: url(/images/pattern-curve.svg);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position-y: 105%;
-}
 
-.testimonial-wrapper {
+main {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    width: 90%;
-    height: 100vh;
+    position: relative
 }
-/* This is the background for the testimonial container -> Quotes */
-.testimonial-container::before {
-    content: "";
-    background: url(/images/pattern-quotes.svg);
-    width: 100%;
-    height: 100%;
+
+main::before {
+    content: url(/images/pattern-curve.svg);;
     position: absolute;
-    background-repeat: no-repeat;
-    background-position-x: 10%;
-    top: -32%;
-
-    
-}
-.testimonial-container {
-    position: relative;
-    left: 50px;
-    width: 70%;
-}
-
-.citation {
-    font-weight: 300;
-    font-size: 1.6rem;
-    color: hsl(240, 38%, 20%);
-    
-    
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: baseline;
-    padding-top: 2.5rem;
-}
-
-.profession {
-    color: hsl(240, 18%, 77%);
-    padding-left: 0.4rem;
-    font-weight: 500;
-    font-size: 1.1rem;
-    letter-spacing: 1.2px;
-}
-
-.name {
-    color: hsl(240, 38%, 20%);
-    font-size: 1.2rem;
-}
-
-.testimonial-img {
-    box-shadow: 2px 6px 30px 1px hsla(240, 38%, 20%, 0.2);
     width: 100%;
-    position: relative;
-    right: 50px;
-    
+    bottom: 0;
+    background-repeat: no-repeat;
 }
-/* This is the background of the image */
-.carousel-slider-img::before {
+
+.container {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.image-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+
+}
+
+.image-container::before{
     content: "";
     background: url(/images/pattern-bg.svg);
+    background-repeat: no-repeat;
     position: absolute;
+    background-size: contain;
     width: 100%;
     height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-    z-index: -2;
-    
-
 }
 
-.carousel-slider-img {
+.image {
+    height: 80%;
+    width: 80%;
+    margin: auto;
     position: relative;
-    z-index: -1;
-
-    
 }
 
+figure {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 5%;
+    z-index: -1;
+}
 
-
-
-
+img {
+    width: 100%;
+}
 
 .buttons {
     position: relative;
     background-color: white;
-    padding: 20px;
     border-radius: 50px;
     display: flex;
     justify-content: space-between;
@@ -136,7 +98,64 @@ button {
     outline: none;
     background-color: transparent;
     border: 0px;
+    display: flex;
 }
 
 
+.description-box {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 8%;
+}
 
+.citation {
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: hsl(240, 38%, 20%);
+}
+
+.name {
+    color: hsl(240, 38%, 20%);
+    font-size: 1.2rem;
+}
+
+.profession {
+    color: hsl(240, 18%, 77%);
+    padding-left: 0.4rem;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+}
+
+.quotes {
+    display: flex;
+    align-items: baseline;
+    padding-top: 2.5rem;
+}
+
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    figure {
+        right: 0;
+    }
+
+    .description-box {
+        left: 0;
+        text-align: center;
+    }
+    .quotes {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
