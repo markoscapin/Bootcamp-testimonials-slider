@@ -29,11 +29,13 @@ main {
 }
 
 main::before {
-    content: url(/images/pattern-curve.svg);;
+    content: "";
+    background: url(../images/pattern-curve.svg) no-repeat;
     position: absolute;
     width: 100%;
-    bottom: 0;
-    background-repeat: no-repeat;
+    height: 100%;
+    background-position: bottom left;
+    
 }
 
 .container {
@@ -52,17 +54,17 @@ main::before {
 
 .image-container::before{
     content: "";
-    background: url(/images/pattern-bg.svg);
+    background: url(../images/pattern-bg.svg);
     background-repeat: no-repeat;
     position: absolute;
     background-size: contain;
     width: 100%;
     height: 100%;
+    background-position: center;
 }
 
 .image {
-    height: 80%;
-    width: 80%;
+    width: 75%;
     margin: auto;
     position: relative;
 }
@@ -75,23 +77,25 @@ figure {
     align-items: center;
     position: relative;
     right: 5%;
-    z-index: -1;
 }
 
 img {
     width: 100%;
+    box-shadow: 2px 6px 30px 1px hsla(240, 38%, 20%, 0.2);
 }
 
 .buttons {
-    position: relative;
+    position: absolute;
     background-color: white;
     border-radius: 50px;
     display: flex;
     justify-content: space-between;
-    width: 10vw;
-    transform: translate(50%, -50%);
+    width: 6.5rem;
+    transform: translate(50%, 50%);
     box-shadow: 0px 3px 15px 1px hsla(240, 38%, 20%, 0.2);
-    padding: 15px 20px;
+    padding: 17px 20px;
+    bottom: 0;
+    left: 0;
 }
 
 button {
@@ -108,25 +112,37 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left: 8%;
+    left: 5%;
 }
 
 .citation {
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 2.3rem;
     color: hsl(240, 38%, 20%);
+    position: relative;
+    z-index: 1;
+}
+.citation::before {
+    content: "";
+    background: url(../images/pattern-quotes.svg) no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 5%;
+    top: -45%;
+    transform: scale(0.8);
 }
 
 .name {
     color: hsl(240, 38%, 20%);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .profession {
     color: hsl(240, 18%, 77%);
     padding-left: 0.4rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     letter-spacing: 1.2px;
 }
 
@@ -137,14 +153,25 @@ button {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
+    main::before{
+        background-size: contain;
+        left: -25%;
+    }
     .container {
         flex-direction: column-reverse;
         align-items: center;
+        padding: 5%;
+        height: 100%;
     }
 
     figure {
         right: 0;
+        height: auto;
+        padding: 2%;
+    }
+    .image-container {
+        padding: 1%;
     }
 
     .description-box {
@@ -156,6 +183,48 @@ button {
         text-align: center;
         justify-content: center;
         align-items: center;
+        padding-top: 1rem;
     }
+
+    .description-box {
+        width: 100%;
+        height: 50%;
+    }
+
+    .citation {
+        font-size: 1.2rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+    .profession {
+        font-size: 0.9rem;
+    }
+
+    .citation::before {
+        transform: scale(0.5) translate(-70%, 0);
+        left: 50%;
+        z-index: -1;
+
+    }
+
+    .buttons {
+        left: 50%;
+        transform: translate(-50%,50%);
+        width: 4.5rem;
+        padding: 10px 15px;
+    }
+
+    button  {
+        width: 0.6rem;
+    }
+
+    .image {
+        margin: 5% auto;
+    }
+
+
+    
 
 }
