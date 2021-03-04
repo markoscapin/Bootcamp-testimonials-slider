@@ -32,7 +32,9 @@ function changePerson(person) {
 //With this function, we have the index to slice the name and we return the firstName only!
 function getName(personName) {
     var slicerIndex = personName.search(" ");
-    return personName.slice(0,slicerIndex);
+    var firstLetter = personName.slice(0,1);
+
+    return firstLetter.toLowerCase() + personName.slice(1,slicerIndex);
 }
 //main function switcher for buttons
 function personSwitcher() {
