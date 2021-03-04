@@ -224,6 +224,10 @@ button {
         margin: 5% auto;
     }
 
+    .attribution {
+        display: none;
+    }
+
 
     
 
